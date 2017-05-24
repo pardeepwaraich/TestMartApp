@@ -1,19 +1,19 @@
 package org.singh;
+import org.singh.business.ProductServiceimpl;
 
+import javax.jws.WebMethod;
 import javax.jws.WebService;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebService
 public class ProductCatalog{
+
+    ProductServiceimpl productService = new ProductServiceimpl();
+
+    @WebMethod
     public List<String> getProductCategories(){
-        List<String> categories = new ArrayList<>();
+        return productService.getProductCategories();
 
-        categories.add("Shopping");
-        categories.add("Grocery");
-        categories.add("Liquor");
-
-        return categories;
     }
 
 }

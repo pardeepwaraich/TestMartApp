@@ -16,4 +16,8 @@ public class ProductCatalog{
 
     }
 
+    public List<String> getProduct(String category){
+        return productService.getProducts(category);
+    }
+
 }
